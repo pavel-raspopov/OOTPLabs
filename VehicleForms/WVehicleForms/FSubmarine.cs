@@ -12,7 +12,7 @@ using OOTP.Attributes;
 
 namespace OOTP.VehicleForms.WVehicleForms
 {
-    [WorkingTypesForm((new Type[] { typeof(Submarine) }))]
+    [WorkingTypes((new Type[] { typeof(Submarine) }))]
     public partial class FSubmarine : FWaterVehicle
     {
         private readonly Submarine receivedSubmarine = null;

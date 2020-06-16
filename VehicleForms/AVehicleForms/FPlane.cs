@@ -12,7 +12,7 @@ using OOTP.Attributes;
 
 namespace OOTP.VehicleForms.AVehicleForms
 {
-    [WorkingTypesForm((new Type[] { typeof(Plane) }))]
+    [WorkingTypes((new Type[] { typeof(Plane) }))]
     public partial class FPlane : FAirVehicle
     {
         private Plane receivedPlane = null;

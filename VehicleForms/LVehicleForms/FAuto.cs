@@ -13,7 +13,7 @@ using OOTP.Attributes;
 
 namespace OOTP.VehicleForms.LVehicleForms
 {
-    [WorkingTypesForm((new Type[] { typeof(Auto) }))]
+    [WorkingTypes((new Type[] { typeof(Auto) }))]
     public partial class FAuto : FLandVehicle
     {
         private Auto receivedAuto = null;

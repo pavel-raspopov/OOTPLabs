@@ -12,7 +12,7 @@ using OOTP.Attributes;
 
 namespace OOTP.VehicleForms.AVehicleForms
 {
-    [WorkingTypesForm((new Type[] { typeof(Airship) }))]
+    [WorkingTypes((new Type[] { typeof(Airship) }))]
     public partial class FAirship : FAirVehicle
     {
         private Airship receivedAirship = null;

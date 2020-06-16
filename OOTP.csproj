@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Attributes\ExtensionAttribute.cs" />
     <Compile Include="Attributes\VehicleTypeAttribute.cs" />
-    <Compile Include="Attributes\WorkingTypesFormAttribute.cs" />
+    <Compile Include="Attributes\WorkingTypesAttribute.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

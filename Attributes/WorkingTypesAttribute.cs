@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOTP.Attributes
 {
-    class WorkingTypesFormAttribute : Attribute
+    class WorkingTypesAttribute : Attribute
     {
         public Type[] WorkingTypes { get; set; }
-        public WorkingTypesFormAttribute(Type[] workingTypes)
+        public WorkingTypesAttribute(Type[] workingTypes)
         {
             WorkingTypes = workingTypes;
         }
