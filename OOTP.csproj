@@ -143,6 +143,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VehicleForms\AVehicleForms\FAirship.resx">
+      <DependentUpon>FAirship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\AVehicleForms\FPlane.resx">
+      <DependentUpon>FPlane.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VehicleForms\FAirVehicle.resx">
       <DependentUpon>FAirVehicle.cs</DependentUpon>
     </EmbeddedResource>
