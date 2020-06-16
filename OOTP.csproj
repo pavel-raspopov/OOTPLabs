@@ -54,6 +54,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicles\AirVehicle.cs" />
+    <Compile Include="Vehicles\AVehicle\Airship.cs" />
+    <Compile Include="Vehicles\AVehicle\Plane.cs" />
+    <Compile Include="Vehicles\LandVehicle.cs" />
+    <Compile Include="Vehicles\LVehicle\Auto.cs" />
+    <Compile Include="Vehicles\LVehicle\Motobike.cs" />
+    <Compile Include="Vehicles\Vehicle.cs" />
+    <Compile Include="Vehicles\WaterVehicle.cs" />
+    <Compile Include="Vehicles\WVehicle\Sailboat.cs" />
+    <Compile Include="Vehicles\WVehicle\Submarine.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VehiclesElement\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
