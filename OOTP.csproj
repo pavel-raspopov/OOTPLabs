@@ -167,6 +167,12 @@
     <EmbeddedResource Include="VehicleForms\LVehicleForms\FMotobike.resx">
       <DependentUpon>FMotobike.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\WVehicleForms\FSailboat.resx">
+      <DependentUpon>FSailboat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\WVehicleForms\FSubmarine.resx">
+      <DependentUpon>FSubmarine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VehiclesElementForm\FEngine.resx">
       <DependentUpon>FEngine.cs</DependentUpon>
     </EmbeddedResource>

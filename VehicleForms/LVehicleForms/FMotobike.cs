@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OOTP.Vehicles.LVehicle;
 using OOTP.VehiclesElement;
-using OOTP.VehiclesElementForm;
 using OOTP.Attributes;
 
 namespace OOTP.VehicleForms.LVehicleForms
@@ -53,7 +52,6 @@ namespace OOTP.VehicleForms.LVehicleForms
         {
             InitializeComponent();
             RButSideCarNo.Checked = true;
-            FEngine = new FEngine();
         }
         public void SetSideCar(SideCar sideCar)
         {
