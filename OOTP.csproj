@@ -161,6 +161,12 @@
     <EmbeddedResource Include="VehicleForms\FWaterVehicle.resx">
       <DependentUpon>FWaterVehicle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\LVehicleForms\FAuto.resx">
+      <DependentUpon>FAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\LVehicleForms\FMotobike.resx">
+      <DependentUpon>FMotobike.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VehiclesElementForm\FEngine.resx">
       <DependentUpon>FEngine.cs</DependentUpon>
     </EmbeddedResource>
