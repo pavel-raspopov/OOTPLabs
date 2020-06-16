@@ -172,7 +172,7 @@ namespace OOTP.VehicleForms.LVehicleForms
             {
                 Auto auto = new Auto();
                 EditAuto(auto);
-                FMenu.AddTransport(auto);
+                FMain.AddVehicle(auto);
             }
             else
                 EditAuto(receivedAuto);

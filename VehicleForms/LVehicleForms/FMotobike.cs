@@ -106,7 +106,7 @@ namespace OOTP.VehicleForms.LVehicleForms
             {
                 Motobike motobike = new Motobike();
                 EditMotobike(motobike);
-                FMenu.AddTransport(motobike);
+                FMain.AddVehicle(motobike);
             }
             else
                 EditMotobike(receivedMotobike);

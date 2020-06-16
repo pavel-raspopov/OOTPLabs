@@ -101,7 +101,7 @@ namespace OOTP.VehicleForms.WVehicleForms
             {
                 Sailboat sailboat = new Sailboat();
                 EditSailboat(sailboat);
-                FMenu.AddTransport(sailboat);
+                FMain.AddVehicle(sailboat);
             }
             else
                 EditSailboat((Sailboat)receivedSailboat);

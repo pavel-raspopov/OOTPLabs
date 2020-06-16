@@ -123,7 +123,7 @@ namespace OOTP.VehicleForms.AVehicleForms
             {
                 Airship airship = new Airship();
                 EditAirship(airship);
-                FMenu.AddTransport(airship);
+                FMain.AddVehicle(airship);
             }
             else
                 EditAirship(receivedAirship);

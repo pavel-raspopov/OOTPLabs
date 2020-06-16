@@ -123,7 +123,7 @@ namespace OOTP.VehicleForms.AVehicleForms
             {
                 Plane plane = new Plane();
                 EditPlane(plane);
-                FMenu.AddTransport(plane);
+                FMain.AddVehicle(plane);
             }
             else
                 EditPlane(receivedPlane);

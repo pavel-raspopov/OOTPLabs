@@ -100,7 +100,7 @@ namespace OOTP.VehicleForms.WVehicleForms
             {
                 Submarine submarine = new Submarine();
                 EditSubmarine(submarine);
-                FMenu.AddTransport(submarine);
+                FMain.AddVehicle(submarine);
             }
             else
                 EditSubmarine(receivedSubmarine);
