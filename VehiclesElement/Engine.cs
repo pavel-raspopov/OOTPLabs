@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace OOTP.VehiclesElement
 {
-    class Engine
+    public enum TypeFuel
     {
+        none,
+        petrol,
+        diesel,
+        gas
+    }
+    [Serializable]
+    public class Engine
+    {
+        public int Power { get; set; }
+        public double Volume { get; set; }
+        public TypeFuel TypeFuel { get; set; }
+        public Engine(int power, double volume, TypeFuel typeFuel)
+        {
+            this.Power = power;
+            this.Volume = volume;
+            this.TypeFuel = typeFuel;
+        }
+        public Engine()
+        {
+        }
     }
 }

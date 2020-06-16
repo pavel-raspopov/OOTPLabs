@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace OOTP.Attributes
 {
-    class VehicleTypeAttribute
+    class VehicleTypeAttribute : Attribute
     {
+        public string TypeName { get; set; }
+
+        public VehicleTypeAttribute(string typeName)
+        {
+            TypeName = typeName;
+        }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace OOTP.Vehicles
 {
-    class Vehicle
+    [Serializable]
+    public abstract class Vehicle
     {
+        public string Name { get; set; } = "";
+        public int Year { get; set; }
+        public int Weight { get; set; }
+        public int MaxSpeed { get; set; }
     }
 }

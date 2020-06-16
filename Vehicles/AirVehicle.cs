@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOTP.Vehicles
 {
-    class AirVehicle
+    [Serializable]
+    public abstract class AirVehicle : Vehicle
     {
+        public int MaxHeight { get; set; }
+        public int TakeoffWeight { get; set; }
     }
 }
