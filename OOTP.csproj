@@ -57,6 +57,72 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehicleForms\AVehicleForms\FAirship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\AVehicleForms\FAirship.Designer.cs">
+      <DependentUpon>FAirship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\AVehicleForms\FPlane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\AVehicleForms\FPlane.Designer.cs">
+      <DependentUpon>FPlane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\FAirVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\FAirVehicle.Designer.cs">
+      <DependentUpon>FAirVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\FLandVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\FLandVehicle.Designer.cs">
+      <DependentUpon>FLandVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\FVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\FVehicle.Designer.cs">
+      <DependentUpon>FVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\FWaterVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\FWaterVehicle.Designer.cs">
+      <DependentUpon>FWaterVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\LVehicleForms\FAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\LVehicleForms\FAuto.Designer.cs">
+      <DependentUpon>FAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\LVehicleForms\FMotobike.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\LVehicleForms\FMotobike.Designer.cs">
+      <DependentUpon>FMotobike.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\WVehicleForms\FSailboat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\WVehicleForms\FSailboat.Designer.cs">
+      <DependentUpon>FSailboat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleForms\WVehicleForms\FSubmarine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleForms\WVehicleForms\FSubmarine.Designer.cs">
+      <DependentUpon>FSubmarine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehiclesElementForm\FEngine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehiclesElementForm\FEngine.Designer.cs">
+      <DependentUpon>FEngine.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehiclesElement\Engine.cs" />
     <Compile Include="Vehicles\AirVehicle.cs" />
     <Compile Include="Vehicles\AVehicle\Airship.cs" />
