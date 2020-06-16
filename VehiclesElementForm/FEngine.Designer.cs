@@ -31,10 +31,10 @@
             this.labPower = new System.Windows.Forms.Label();
             this.labVolume = new System.Windows.Forms.Label();
             this.labFuel = new System.Windows.Forms.Label();
-            this.textBPower = new System.Windows.Forms.TextBox();
-            this.textBVolume = new System.Windows.Forms.TextBox();
-            this.comboBFuel = new System.Windows.Forms.ComboBox();
-            this.butSave = new System.Windows.Forms.Button();
+            this.TextBPower = new System.Windows.Forms.TextBox();
+            this.TextBVolume = new System.Windows.Forms.TextBox();
+            this.ComboBFuel = new System.Windows.Forms.ComboBox();
+            this.ButSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labPower
@@ -67,60 +67,61 @@
             this.labFuel.TabIndex = 2;
             this.labFuel.Text = "Вид топлива";
             // 
-            // textBPower
+            // TextBPower
             // 
-            this.textBPower.Location = new System.Drawing.Point(276, 51);
-            this.textBPower.Name = "textBPower";
-            this.textBPower.Size = new System.Drawing.Size(156, 20);
-            this.textBPower.TabIndex = 3;
-            this.textBPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBPower_KeyPress);
+            this.TextBPower.Location = new System.Drawing.Point(276, 51);
+            this.TextBPower.Name = "TextBPower";
+            this.TextBPower.Size = new System.Drawing.Size(156, 20);
+            this.TextBPower.TabIndex = 3;
+            this.TextBPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBPower_KeyPress);
             // 
-            // textBVolume
+            // TextBVolume
             // 
-            this.textBVolume.Location = new System.Drawing.Point(276, 105);
-            this.textBVolume.Name = "textBVolume";
-            this.textBVolume.Size = new System.Drawing.Size(156, 20);
-            this.textBVolume.TabIndex = 4;
-            this.textBVolume.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBVolume_KeyPress);
+            this.TextBVolume.Location = new System.Drawing.Point(276, 105);
+            this.TextBVolume.Name = "TextBVolume";
+            this.TextBVolume.Size = new System.Drawing.Size(156, 20);
+            this.TextBVolume.TabIndex = 4;
+            this.TextBVolume.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBVolume_KeyPress);
             // 
-            // comboBFuel
+            // ComboBFuel
             // 
-            this.comboBFuel.FormattingEnabled = true;
-            this.comboBFuel.Items.AddRange(new object[] {
+            this.ComboBFuel.FormattingEnabled = true;
+            this.ComboBFuel.Items.AddRange(new object[] {
             "",
             "Бензин",
             "Дизель",
             "Газ"});
-            this.comboBFuel.Location = new System.Drawing.Point(276, 163);
-            this.comboBFuel.Name = "comboBFuel";
-            this.comboBFuel.Size = new System.Drawing.Size(156, 21);
-            this.comboBFuel.TabIndex = 5;
+            this.ComboBFuel.Location = new System.Drawing.Point(276, 163);
+            this.ComboBFuel.Name = "ComboBFuel";
+            this.ComboBFuel.Size = new System.Drawing.Size(156, 21);
+            this.ComboBFuel.TabIndex = 5;
             // 
-            // butSave
+            // ButSave
             // 
-            this.butSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSave.Location = new System.Drawing.Point(166, 206);
-            this.butSave.Name = "butSave";
-            this.butSave.Size = new System.Drawing.Size(147, 32);
-            this.butSave.TabIndex = 6;
-            this.butSave.Text = "Сохранить";
-            this.butSave.UseVisualStyleBackColor = true;
-            this.butSave.Click += new System.EventHandler(this.butSave_Click);
+            this.ButSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButSave.Location = new System.Drawing.Point(166, 206);
+            this.ButSave.Name = "ButSave";
+            this.ButSave.Size = new System.Drawing.Size(147, 32);
+            this.ButSave.TabIndex = 6;
+            this.ButSave.Text = "Сохранить";
+            this.ButSave.UseVisualStyleBackColor = true;
+            this.ButSave.Click += new System.EventHandler(this.ButSave_Click);
             // 
             // FEngine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 254);
-            this.Controls.Add(this.butSave);
-            this.Controls.Add(this.comboBFuel);
-            this.Controls.Add(this.textBVolume);
-            this.Controls.Add(this.textBPower);
+            this.Controls.Add(this.ButSave);
+            this.Controls.Add(this.ComboBFuel);
+            this.Controls.Add(this.TextBVolume);
+            this.Controls.Add(this.TextBPower);
             this.Controls.Add(this.labFuel);
             this.Controls.Add(this.labVolume);
             this.Controls.Add(this.labPower);
             this.Name = "FEngine";
             this.Text = "Параметры двигателя";
+            this.Load += new System.EventHandler(this.FEngine_Load);
             this.Shown += new System.EventHandler(this.FEngine_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,9 +133,9 @@
         private System.Windows.Forms.Label labPower;
         private System.Windows.Forms.Label labVolume;
         private System.Windows.Forms.Label labFuel;
-        private System.Windows.Forms.TextBox textBPower;
-        private System.Windows.Forms.TextBox textBVolume;
-        private System.Windows.Forms.ComboBox comboBFuel;
-        private System.Windows.Forms.Button butSave;
+        private System.Windows.Forms.TextBox TextBPower;
+        private System.Windows.Forms.TextBox TextBVolume;
+        private System.Windows.Forms.ComboBox ComboBFuel;
+        private System.Windows.Forms.Button ButSave;
     }
 }

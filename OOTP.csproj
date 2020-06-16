@@ -143,6 +143,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VehicleForms\FAirVehicle.resx">
+      <DependentUpon>FAirVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\FLandVehicle.resx">
+      <DependentUpon>FLandVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\FVehicle.resx">
+      <DependentUpon>FVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleForms\FWaterVehicle.resx">
+      <DependentUpon>FWaterVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VehiclesElementForm\FEngine.resx">
       <DependentUpon>FEngine.cs</DependentUpon>
     </EmbeddedResource>

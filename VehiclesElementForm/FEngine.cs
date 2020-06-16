@@ -17,7 +17,7 @@ namespace OOTP.VehiclesElementForm
         public FEngine()
         {
             InitializeComponent();
-            comboBFuel.SelectedIndex = 0;
+            ComboBFuel.SelectedIndex = 0;
         }
         public void SetReadOnly()
         {
@@ -30,33 +30,33 @@ namespace OOTP.VehiclesElementForm
                 ComboBox.Enabled = false;
             }
 
-            butSave.Hide();
+            ButSave.Hide();
         }
         public void SetPower(int Power)
         {
             if (Power != 0)
-                textBPower.Text = Convert.ToString(Power);
+                TextBPower.Text = Convert.ToString(Power);
             else
-                textBPower.Text = "";
+                TextBPower.Text = "";
         }
         public int GetPower()
         {
-            if (textBPower.Text.Length != 0)
-                return Convert.ToInt32(textBPower.Text);
+            if (TextBPower.Text.Length != 0)
+                return Convert.ToInt32(TextBPower.Text);
             else
                 return 0;
         }
         public void SetVolume(double Volume)
         {
             if (Volume != 0)
-                textBVolume.Text = Convert.ToString(Volume);
+                TextBVolume.Text = Convert.ToString(Volume);
             else
-                textBVolume.Text = "";
+                TextBVolume.Text = "";
         }
         public double GetVolume()
         {
-            if (textBVolume.Text.Length != 0)
-                return Convert.ToDouble(textBVolume.Text);
+            if (TextBVolume.Text.Length != 0)
+                return Convert.ToDouble(TextBVolume.Text);
             else
                 return 0;
         }
@@ -64,15 +64,15 @@ namespace OOTP.VehiclesElementForm
         {
             switch (typeFuel)
             {
-                case TypeFuel.none: comboBFuel.SelectedIndex = 0; break;
-                case TypeFuel.petrol: comboBFuel.SelectedIndex = 1; break;
-                case TypeFuel.diesel: comboBFuel.SelectedIndex = 2; break;
-                case TypeFuel.gas: comboBFuel.SelectedIndex = 3; break;
+                case TypeFuel.none: ComboBFuel.SelectedIndex = 0; break;
+                case TypeFuel.petrol: ComboBFuel.SelectedIndex = 1; break;
+                case TypeFuel.diesel: ComboBFuel.SelectedIndex = 2; break;
+                case TypeFuel.gas: ComboBFuel.SelectedIndex = 3; break;
             }
         }
         public TypeFuel GetTypeFuel()
         {
-            switch (comboBFuel.SelectedIndex)
+            switch (ComboBFuel.SelectedIndex)
             {
                 case 0: return TypeFuel.none;
                 case 1: return TypeFuel.petrol;
@@ -82,7 +82,7 @@ namespace OOTP.VehiclesElementForm
             return TypeFuel.petrol;
         }
 
-        private void butSave_Click(object sender, EventArgs e)
+        private void ButSave_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -93,7 +93,7 @@ namespace OOTP.VehiclesElementForm
                 SetReadOnly();
         }
 
-        private void textBPower_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBPower_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -101,12 +101,17 @@ namespace OOTP.VehiclesElementForm
             }
         }
 
-        private void textBVolume_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBVolume_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void FEngine_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
