@@ -17,11 +17,13 @@ using OOTP.VehicleForms.LVehicleForms;
 using OOTP.VehicleForms.WVehicleForms;
 using OOTP.VehicleForms.AVehicleForms;
 using OOTP.Serializers;
+using System.Reflection;
 
 namespace OOTP
 {
     public partial class FMain : Form
     {
+        private string[] Plugins;
         private readonly List<Form> Forms = new List<Form>();
         private readonly List<Type> VehicleTypes = new List<Type>();
         private readonly List<Type> Sers = new List<Type>();
@@ -32,9 +34,12 @@ namespace OOTP
             InitForms();
             InitVehicleTypes();
             InitSers();
+            InitPlugins();
             ComboBSers.SelectedIndex = 0;
             ComboBVehicleType.SelectedIndex = 0;
             lvVehicles.ContextMenuStrip = ContextMStrip;
+            if (ComboBArchiving.Items.Count != 0)
+                ComboBArchiving.SelectedIndex = 0;
         }
         private void InitForms()
         {
@@ -59,6 +64,12 @@ namespace OOTP
             Sers.Add(typeof(BinarySer));
             Sers.Add(typeof(JSONSer));
             Sers.Add(typeof(TextSer));
+        }
+        private void InitPlugins()
+        {
+            Plugins = Directory.GetFiles(Application.StartupPath + "\\Plugins\\");
+            foreach (String file in Plugins)
+                ComboBArchiving.Items.Add(Path.GetFileNameWithoutExtension(file));
         }
         public static void AddVehicle(object vehicle)
         {
@@ -130,6 +141,28 @@ namespace OOTP
             else
                 return null;
         }
+        private bool DecompressFile(ref string filePath)
+        {
+            string extension = Path.GetExtension(filePath);
+            foreach (string plugin in Plugins)
+            {
+                Assembly assembly = Assembly.LoadFile(plugin);
+                object obj = assembly.CreateInstance("Compressions");
+                var attrs = Attribute.GetCustomAttributes(obj.GetType());
+                foreach (var attr in attrs)
+                {
+                    if (attr.GetType().Name == typeof(ExtensionAttribute).Name)
+                        if (Convert.ToString(attr.GetType().GetProperty("Extension").GetValue(attr)) == extension)
+                        {
+                            MethodInfo method = obj.GetType().GetMethod("Decompress");
+                            method.Invoke(obj, new object[] { filePath });
+                            filePath = filePath.Substring(0, filePath.Length - extension.Length);
+                            return true;
+                        }
+                }
+            }
+            return false;
+        }
         private void FMain_Load(object sender, EventArgs e)
         {
 
@@ -184,17 +217,43 @@ namespace OOTP
                 return;
             string filePath = SaveFD.FileName;
             ser.Serialize(vehicle, filePath);
+
+            DialogResult choice = MessageBox.Show("Заархивировать файл?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (choice == DialogResult.Yes)
+            {
+                if (ComboBArchiving.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Не загружены файлы для архивации.");
+                    return;
+                }
+                Assembly assembly = Assembly.LoadFile(Plugins[ComboBArchiving.SelectedIndex]);
+                object obj = assembly.CreateInstance("Compressions");
+                Type type = obj.GetType();
+                MethodInfo method = type.GetMethod("Compress");
+                method.Invoke(obj, new object[] { filePath });
+                File.Delete(filePath);
+            }
         }
 
         private void ButLoad_Click(object sender, EventArgs e)
         {
             object[] loadVehicle;
+            bool IsDecompressed = false;
             if (OpenFD.ShowDialog() == DialogResult.Cancel)
                 return;
             string filePath = OpenFD.FileName;
 
             try
             {
+                if (GetSer(filePath) == null)
+                    if (DecompressFile(ref filePath) == false)
+                    {
+                        MessageBox.Show("Не загружен файл для разархивации.");
+                        return;
+                    }
+                    else
+                        IsDecompressed = true;
+
                 ISer ser = GetSer(filePath);
                 if (ser == null)
                 {
@@ -206,6 +265,12 @@ namespace OOTP
                 foreach (Vehicle vehicle in loadVehicle)
                     Vehicles.Add(vehicle);
                 UpdateVehicles();
+
+                if (IsDecompressed)
+                {
+                    File.Delete(filePath);
+                    IsDecompressed = false;
+                }
             }
             catch (Exception ex)
             {

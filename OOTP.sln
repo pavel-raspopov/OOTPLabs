@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOTP", "OOTP.csproj", "{7A5B06AC-81AD-4941-A0DA-FC51F33D013F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GZip", "GZip\GZip.csproj", "{0B1F43B0-2C04-4870-B766-C9F4E9B85FC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deflate", "Deflate\Deflate.csproj", "{A1405E2B-34BE-46D8-8099-A7F9DC0EE169}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7A5B06AC-81AD-4941-A0DA-FC51F33D013F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A5B06AC-81AD-4941-A0DA-FC51F33D013F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A5B06AC-81AD-4941-A0DA-FC51F33D013F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1F43B0-2C04-4870-B766-C9F4E9B85FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1F43B0-2C04-4870-B766-C9F4E9B85FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1F43B0-2C04-4870-B766-C9F4E9B85FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1F43B0-2C04-4870-B766-C9F4E9B85FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1405E2B-34BE-46D8-8099-A7F9DC0EE169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1405E2B-34BE-46D8-8099-A7F9DC0EE169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1405E2B-34BE-46D8-8099-A7F9DC0EE169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1405E2B-34BE-46D8-8099-A7F9DC0EE169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

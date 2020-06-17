@@ -44,6 +44,8 @@
             this.ButLoad = new System.Windows.Forms.Button();
             this.SaveFD = new System.Windows.Forms.SaveFileDialog();
             this.OpenFD = new System.Windows.Forms.OpenFileDialog();
+            this.labArchiving = new System.Windows.Forms.Label();
+            this.ComboBArchiving = new System.Windows.Forms.ComboBox();
             this.ContextMStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,11 +173,31 @@
             this.ButLoad.UseVisualStyleBackColor = true;
             this.ButLoad.Click += new System.EventHandler(this.ButLoad_Click);
             // 
+            // labArchiving
+            // 
+            this.labArchiving.AutoSize = true;
+            this.labArchiving.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labArchiving.Location = new System.Drawing.Point(464, 234);
+            this.labArchiving.Name = "labArchiving";
+            this.labArchiving.Size = new System.Drawing.Size(90, 20);
+            this.labArchiving.TabIndex = 22;
+            this.labArchiving.Text = "Архивация";
+            // 
+            // ComboBArchiving
+            // 
+            this.ComboBArchiving.FormattingEnabled = true;
+            this.ComboBArchiving.Location = new System.Drawing.Point(642, 234);
+            this.ComboBArchiving.Name = "ComboBArchiving";
+            this.ComboBArchiving.Size = new System.Drawing.Size(131, 21);
+            this.ComboBArchiving.TabIndex = 23;
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ComboBArchiving);
+            this.Controls.Add(this.labArchiving);
             this.Controls.Add(this.ButLoad);
             this.Controls.Add(this.ButSave);
             this.Controls.Add(this.ComboBSers);
@@ -209,6 +231,8 @@
         private System.Windows.Forms.Button ButLoad;
         private System.Windows.Forms.SaveFileDialog SaveFD;
         private System.Windows.Forms.OpenFileDialog OpenFD;
+        private System.Windows.Forms.Label labArchiving;
+        private System.Windows.Forms.ComboBox ComboBArchiving;
     }
 }
 
