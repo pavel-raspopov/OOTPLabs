@@ -19,53 +19,53 @@ namespace OOTP.VehicleForms
         public void SetName(String name)
         {
             if (name != "")
-                textBName.Text = name;
+                TextBName.Text = name;
             else
-                textBName.Text = "";
+                TextBName.Text = "";
         }
         public String GetName()
         {
-            return textBName.Text;
+            return TextBName.Text;
         }
         public int GetYear()
         {
-            if (textBYear.Text.Length != 0)
-                return Convert.ToInt32(textBYear.Text);
+            if (TextBYear.Text.Length != 0)
+                return Convert.ToInt32(TextBYear.Text);
             else
                 return 0;
         }
         public void SetYear(int year)
         {
             if (year != 0)
-                textBYear.Text = Convert.ToString(year);
+                TextBYear.Text = Convert.ToString(year);
             else
-                textBYear.Text = "";
+                TextBYear.Text = "";
         }
         public int GetWeight()
         {
-            if (textBWeight.Text.Length != 0)
-                return Convert.ToInt32(textBWeight.Text);
+            if (TextBWeight.Text.Length != 0)
+                return Convert.ToInt32(TextBWeight.Text);
             else
                 return 0;
         }
         public void SetWeight(int weight)
         {
             if (weight != 0)
-                textBWeight.Text = Convert.ToString(weight);
+                TextBWeight.Text = Convert.ToString(weight);
             else
-                textBWeight.Text = "";
+                TextBWeight.Text = "";
         }
         public void SetMaxSpeed(int maxSpeed)
         {
             if (maxSpeed != 0)
-                textBMaxSpeed.Text = Convert.ToString(maxSpeed);
+                TextBMaxSpeed.Text = Convert.ToString(maxSpeed);
             else
-                textBMaxSpeed.Text = "";
+                TextBMaxSpeed.Text = "";
         }
         public int GetMaxSpeed()
         {
-            if (textBMaxSpeed.Text.Length != 0)
-                return Convert.ToInt32(textBMaxSpeed.Text);
+            if (TextBMaxSpeed.Text.Length != 0)
+                return Convert.ToInt32(TextBMaxSpeed.Text);
             else
                 return 0;
         }
@@ -82,17 +82,17 @@ namespace OOTP.VehicleForms
 
         }
 
-        private void textBYear_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBMaxSpeed_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckEnterData(sender, e);
         }
 
-        private void textBWeight_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBWeight_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckEnterData(sender, e);
         }
 
-        private void textBMaxSpeed_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBYear_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckEnterData(sender, e);
         }

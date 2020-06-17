@@ -32,10 +32,10 @@
             this.labYear = new System.Windows.Forms.Label();
             this.labWeight = new System.Windows.Forms.Label();
             this.labMaxSpeed = new System.Windows.Forms.Label();
-            this.textBName = new System.Windows.Forms.TextBox();
-            this.textBYear = new System.Windows.Forms.TextBox();
-            this.textBWeight = new System.Windows.Forms.TextBox();
-            this.textBMaxSpeed = new System.Windows.Forms.TextBox();
+            this.TextBName = new System.Windows.Forms.TextBox();
+            this.TextBYear = new System.Windows.Forms.TextBox();
+            this.TextBWeight = new System.Windows.Forms.TextBox();
+            this.TextBMaxSpeed = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labName
@@ -78,46 +78,46 @@
             this.labMaxSpeed.TabIndex = 3;
             this.labMaxSpeed.Text = "Макс. скорость ( км/ч )";
             // 
-            // textBName
+            // TextBName
             // 
-            this.textBName.Location = new System.Drawing.Point(235, 52);
-            this.textBName.Name = "textBName";
-            this.textBName.Size = new System.Drawing.Size(160, 20);
-            this.textBName.TabIndex = 4;
+            this.TextBName.Location = new System.Drawing.Point(235, 52);
+            this.TextBName.Name = "TextBName";
+            this.TextBName.Size = new System.Drawing.Size(160, 20);
+            this.TextBName.TabIndex = 4;
             // 
-            // textBYear
+            // TextBYear
             // 
-            this.textBYear.Location = new System.Drawing.Point(235, 109);
-            this.textBYear.Name = "textBYear";
-            this.textBYear.Size = new System.Drawing.Size(160, 20);
-            this.textBYear.TabIndex = 5;
-            this.textBYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBYear_KeyPress);
+            this.TextBYear.Location = new System.Drawing.Point(235, 109);
+            this.TextBYear.Name = "TextBYear";
+            this.TextBYear.Size = new System.Drawing.Size(160, 20);
+            this.TextBYear.TabIndex = 5;
+            this.TextBYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBYear_KeyPress);
             // 
-            // textBWeight
+            // TextBWeight
             // 
-            this.textBWeight.Location = new System.Drawing.Point(235, 166);
-            this.textBWeight.Name = "textBWeight";
-            this.textBWeight.Size = new System.Drawing.Size(160, 20);
-            this.textBWeight.TabIndex = 6;
-            this.textBWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBWeight_KeyPress);
+            this.TextBWeight.Location = new System.Drawing.Point(235, 166);
+            this.TextBWeight.Name = "TextBWeight";
+            this.TextBWeight.Size = new System.Drawing.Size(160, 20);
+            this.TextBWeight.TabIndex = 6;
+            this.TextBWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBWeight_KeyPress);
             // 
-            // textBMaxSpeed
+            // TextBMaxSpeed
             // 
-            this.textBMaxSpeed.Location = new System.Drawing.Point(235, 229);
-            this.textBMaxSpeed.Name = "textBMaxSpeed";
-            this.textBMaxSpeed.Size = new System.Drawing.Size(160, 20);
-            this.textBMaxSpeed.TabIndex = 7;
-            this.textBMaxSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBMaxSpeed_KeyPress);
+            this.TextBMaxSpeed.Location = new System.Drawing.Point(235, 229);
+            this.TextBMaxSpeed.Name = "TextBMaxSpeed";
+            this.TextBMaxSpeed.Size = new System.Drawing.Size(160, 20);
+            this.TextBMaxSpeed.TabIndex = 7;
+            this.TextBMaxSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBMaxSpeed_KeyPress);
             // 
             // FVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 331);
-            this.Controls.Add(this.textBMaxSpeed);
-            this.Controls.Add(this.textBWeight);
-            this.Controls.Add(this.textBYear);
-            this.Controls.Add(this.textBName);
+            this.Controls.Add(this.TextBMaxSpeed);
+            this.Controls.Add(this.TextBWeight);
+            this.Controls.Add(this.TextBYear);
+            this.Controls.Add(this.TextBName);
             this.Controls.Add(this.labMaxSpeed);
             this.Controls.Add(this.labWeight);
             this.Controls.Add(this.labYear);
@@ -136,9 +136,9 @@
         private System.Windows.Forms.Label labYear;
         private System.Windows.Forms.Label labWeight;
         private System.Windows.Forms.Label labMaxSpeed;
-        private System.Windows.Forms.TextBox textBName;
-        private System.Windows.Forms.TextBox textBYear;
-        private System.Windows.Forms.TextBox textBWeight;
-        private System.Windows.Forms.TextBox textBMaxSpeed;
+        private System.Windows.Forms.TextBox TextBName;
+        private System.Windows.Forms.TextBox TextBYear;
+        private System.Windows.Forms.TextBox TextBWeight;
+        private System.Windows.Forms.TextBox TextBMaxSpeed;
     }
 }
