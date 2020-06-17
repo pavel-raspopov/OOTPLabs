@@ -9,13 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OOTP.Attributes;
-using OOTP.Vehicles;
-using OOTP.Vehicles.LVehicle;
-using OOTP.Vehicles.WVehicle;
-using OOTP.Vehicles.AVehicle;
-using OOTP.VehicleForms.LVehicleForms;
-using OOTP.VehicleForms.WVehicleForms;
-using OOTP.VehicleForms.AVehicleForms;
 using OOTP.Serializers;
 using System.Reflection;
 
@@ -24,15 +17,11 @@ namespace OOTP
     public partial class FMain : Form
     {
         private string[] Plugins;
-        private readonly List<Form> Forms = new List<Form>();
-        private readonly List<Type> VehicleTypes = new List<Type>();
         private readonly List<Type> Sers = new List<Type>();
         private static readonly List<object> Vehicles = new List<object>();
         public FMain()
         {
             InitializeComponent();
-            InitForms();
-            InitVehicleTypes();
             InitSers();
             InitPlugins();
             ComboBSers.SelectedIndex = 0;
@@ -40,24 +29,6 @@ namespace OOTP
             lvVehicles.ContextMenuStrip = ContextMStrip;
             if (ComboBArchiving.Items.Count != 0)
                 ComboBArchiving.SelectedIndex = 0;
-        }
-        private void InitForms()
-        {
-            Forms.Add(new FAirship());
-            Forms.Add(new FPlane());
-            Forms.Add(new FAuto());
-            Forms.Add(new FMotobike());
-            Forms.Add(new FSubmarine());
-            Forms.Add(new FSailboat());
-        }
-        private void InitVehicleTypes()
-        {
-            VehicleTypes.Add(typeof(Airship));
-            VehicleTypes.Add(typeof(Plane));
-            VehicleTypes.Add(typeof(Auto));
-            VehicleTypes.Add(typeof(Motobike));
-            VehicleTypes.Add(typeof(Submarine));
-            VehicleTypes.Add(typeof(Sailboat));
         }
         private void InitSers()
         {
@@ -74,54 +45,6 @@ namespace OOTP
         public static void AddVehicle(object vehicle)
         {
             Vehicles.Add(vehicle);
-        }
-        private void CreateAddingForm(Type vehicleType)
-        {
-            Form form = null;
-            foreach (Form tempForm in Forms)
-            {
-                Type type = tempForm.GetType();
-                if (Attribute.IsDefined(type, typeof(WorkingTypesAttribute)))
-                {
-                    var attr = Attribute.GetCustomAttribute(type, typeof(WorkingTypesAttribute)) as WorkingTypesAttribute;
-                    if (attr.CheckWorkersTypes(vehicleType))
-                        form = (Form)Activator.CreateInstance(type);
-                }
-            }
-            if (form != null)
-                form.ShowDialog();
-        }
-        private void CreateUpdatingOrReadingForm(Object vehicle, bool readOnly)
-        {
-            Form form = null;
-            foreach (Form tempForm in Forms)
-            {
-                Type type = tempForm.GetType();
-                if (Attribute.IsDefined(type, typeof(WorkingTypesAttribute)))
-                {
-                    var attr = Attribute.GetCustomAttribute(type, typeof(WorkingTypesAttribute)) as WorkingTypesAttribute;
-                    if (attr.CheckWorkersTypes(vehicle.GetType()))
-                        form = (Form)Activator.CreateInstance(type, vehicle, readOnly);
-                }
-            }
-            if (form != null)
-                form.ShowDialog();
-        }
-        private void UpdateVehicles()
-        {
-            lvVehicles.Items.Clear();
-            foreach (Vehicle vehicle in Vehicles)
-            {
-                Type type = vehicle.GetType();
-                if (Attribute.IsDefined(type, typeof(VehicleTypeAttribute)))
-                {
-                    var attrVal = Attribute.GetCustomAttribute(type, typeof(VehicleTypeAttribute)) as VehicleTypeAttribute;
-                    lvVehicles.Items.Add(attrVal.TypeName);
-                }
-                else
-                    lvVehicles.Items.Add("");
-                lvVehicles.Items[lvVehicles.Items.Count - 1].SubItems.Add(vehicle.Name);
-            }
         }
         private ISer GetSer(string filepath)
         {
@@ -172,7 +95,6 @@ namespace OOTP
             if (lvVehicles.SelectedItems.Count == 1)
             {
                 ListView.SelectedIndexCollection indexs = lvVehicles.SelectedIndices;
-                CreateUpdatingOrReadingForm(Vehicles[indexs[0]], true);
             }
         }
         private void UpdateToolStripMI_Click(object sender, EventArgs e)
@@ -180,8 +102,6 @@ namespace OOTP
             if (lvVehicles.SelectedItems.Count == 1)
             {
                 ListView.SelectedIndexCollection indexs = lvVehicles.SelectedIndices;
-                CreateUpdatingOrReadingForm(Vehicles[indexs[0]], false);
-                UpdateVehicles();
             }
         }
         private void DeleteToolStripMI_Click(object sender, EventArgs e)
@@ -189,14 +109,10 @@ namespace OOTP
             if (lvVehicles.SelectedItems.Count == 1)
             {
                 ListView.SelectedIndexCollection indexs = lvVehicles.SelectedIndices;
-                Vehicles.RemoveAt(indexs[0]);
-                UpdateVehicles();
             }
         }
         private void ButAdd_Click(object sender, EventArgs e)
         {
-            CreateAddingForm(VehicleTypes[ComboBVehicleType.SelectedIndex]);
-            UpdateVehicles();
         }
 
         private void ButSave_Click(object sender, EventArgs e)
@@ -262,9 +178,9 @@ namespace OOTP
                 }
 
                 loadVehicle = ser.Deserialize(filePath);
-                foreach (Vehicle vehicle in loadVehicle)
-                    Vehicles.Add(vehicle);
-                UpdateVehicles();
+                //foreach (Vehicle vehicle in loadVehicle)
+                //    Vehicles.Add(vehicle);
+                //UpdateVehicles();
 
                 if (IsDecompressed)
                 {

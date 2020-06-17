@@ -50,8 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\ExtensionAttribute.cs" />
-    <Compile Include="Attributes\VehicleTypeAttribute.cs" />
-    <Compile Include="Attributes\WorkingTypesAttribute.cs" />
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,83 +62,6 @@
     <Compile Include="Serializers\TextSer.cs" />
     <Compile Include="Serializers\JSONSer.cs" />
     <Compile Include="Serializers\ISer.cs" />
-    <Compile Include="VehicleForms\AVehicleForms\FAirship.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\AVehicleForms\FAirship.Designer.cs">
-      <DependentUpon>FAirship.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\AVehicleForms\FPlane.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\AVehicleForms\FPlane.Designer.cs">
-      <DependentUpon>FPlane.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\FAirVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\FAirVehicle.Designer.cs">
-      <DependentUpon>FAirVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\FLandVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\FLandVehicle.Designer.cs">
-      <DependentUpon>FLandVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\FVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\FVehicle.Designer.cs">
-      <DependentUpon>FVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\FWaterVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\FWaterVehicle.Designer.cs">
-      <DependentUpon>FWaterVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\LVehicleForms\FAuto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\LVehicleForms\FAuto.Designer.cs">
-      <DependentUpon>FAuto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\LVehicleForms\FMotobike.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\LVehicleForms\FMotobike.Designer.cs">
-      <DependentUpon>FMotobike.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\WVehicleForms\FSailboat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\WVehicleForms\FSailboat.Designer.cs">
-      <DependentUpon>FSailboat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleForms\WVehicleForms\FSubmarine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehicleForms\WVehicleForms\FSubmarine.Designer.cs">
-      <DependentUpon>FSubmarine.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehiclesElementForm\FEngine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VehiclesElementForm\FEngine.Designer.cs">
-      <DependentUpon>FEngine.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehiclesElement\Engine.cs" />
-    <Compile Include="Vehicles\AirVehicle.cs" />
-    <Compile Include="Vehicles\AVehicle\Airship.cs" />
-    <Compile Include="Vehicles\AVehicle\Plane.cs" />
-    <Compile Include="Vehicles\LandVehicle.cs" />
-    <Compile Include="Vehicles\LVehicle\Auto.cs" />
-    <Compile Include="Vehicles\LVehicle\Motobike.cs" />
-    <Compile Include="Vehicles\Vehicle.cs" />
-    <Compile Include="Vehicles\WaterVehicle.cs" />
-    <Compile Include="Vehicles\WVehicle\Sailboat.cs" />
-    <Compile Include="Vehicles\WVehicle\Submarine.cs" />
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,39 +74,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VehicleForms\AVehicleForms\FAirship.resx">
-      <DependentUpon>FAirship.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\AVehicleForms\FPlane.resx">
-      <DependentUpon>FPlane.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\FAirVehicle.resx">
-      <DependentUpon>FAirVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\FLandVehicle.resx">
-      <DependentUpon>FLandVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\FVehicle.resx">
-      <DependentUpon>FVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\FWaterVehicle.resx">
-      <DependentUpon>FWaterVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\LVehicleForms\FAuto.resx">
-      <DependentUpon>FAuto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\LVehicleForms\FMotobike.resx">
-      <DependentUpon>FMotobike.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\WVehicleForms\FSailboat.resx">
-      <DependentUpon>FSailboat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForms\WVehicleForms\FSubmarine.resx">
-      <DependentUpon>FSubmarine.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehiclesElementForm\FEngine.resx">
-      <DependentUpon>FEngine.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
