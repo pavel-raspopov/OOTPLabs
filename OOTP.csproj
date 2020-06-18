@@ -140,6 +140,9 @@
     <Compile Include="Vehicles\WaterVehicle.cs" />
     <Compile Include="Vehicles\WaterVehicles\Jetski.cs" />
     <Compile Include="Vehicles\WaterVehicles\Yacht.cs" />
+    <EmbeddedResource Include="EngineForm\FEngine.resx">
+      <DependentUpon>FEngine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +155,36 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VehiclesForms\AirVehiclesForms\FAirship.resx">
+      <DependentUpon>FAirship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\AirVehiclesForms\FPlane.resx">
+      <DependentUpon>FPlane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\FAirVehicle.resx">
+      <DependentUpon>FAirVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\FLandVehicle.resx">
+      <DependentUpon>FLandVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\FVehicle.resx">
+      <DependentUpon>FVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\FWaterVehicle.resx">
+      <DependentUpon>FWaterVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\LandVehiclesForms\FAuto.resx">
+      <DependentUpon>FAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\LandVehiclesForms\FTruck.resx">
+      <DependentUpon>FTruck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\WaterVehiclesForms\FJetski.resx">
+      <DependentUpon>FJetski.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForms\WaterVehiclesForms\FYacht.resx">
+      <DependentUpon>FYacht.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
