@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOTP.Vehicles
 {
-    class WaterVehicle
+    [Serializable]
+    public abstract class WaterVehicle : Vehicle
     {
+        public int Waterline { set; get; }
+        public int Сonsumption { set; get; }
     }
 }

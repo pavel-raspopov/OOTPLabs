@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOTP.Vehicles.AirVehicles
 {
-    class Plane
+    public enum AircraftType
     {
+        none,
+        passenger,
+        transport,
+        military
+    }
+    [Serializable]
+    public class Plane : AirVehicle
+    {
+        public int NumTurbines { get; set; }
+        public AircraftType Type { get; set; }
     }
 }

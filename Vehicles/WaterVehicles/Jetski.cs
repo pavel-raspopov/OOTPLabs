@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace OOTP.Vehicles.WaterVehicles
 {
-    class Jetski
+    public enum JetskiType
     {
+        none,
+        tourist,
+        sport
+    }
+    [Serializable]
+    public class Jetski : WaterVehicle
+    {
+        public int Seats { get; set; }
+        public JetskiType Type { get; set; }
     }
 }

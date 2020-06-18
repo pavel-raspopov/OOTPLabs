@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOTP.Vehicles.AirVehicles
 {
-    class Airship
+    public enum Shell
     {
+        none,
+        soft,
+        semirigid,
+        hard
+    }
+    [Serializable]
+    public class Airship : AirVehicle
+    {
+        public int NumScrews { get; set; }
+        public Shell Shell { get; set; }
     }
 }

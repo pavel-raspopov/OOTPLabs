@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace OOTP.Vehicles
 {
-    [Serializable]
-    public abstract class AirVehicle : Vehicle
+    public enum TypeNames : int
     {
-        public int MaxHeight { get; set; }
-        public int TakeoffWeight { get; set; }
+        airship = 0,
+        plane = 1,
+        auto = 2,
+        truck = 3,
+        jetski = 4,
+        yacht = 5
     }
 }
