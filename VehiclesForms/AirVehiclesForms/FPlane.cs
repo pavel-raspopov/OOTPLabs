@@ -37,11 +37,16 @@ namespace OOTP.VehiclesForms.AirVehiclesForms
             InitializeComponent();
             ComboBAircraftType.SelectedIndex = 0;
         }
-        public FPlane(object transport, bool readMode)
+        public FPlane(object transport)
         {
             InitializeForm();
             SetPlane((Plane)transport);
-            if (readMode == true)
+        }
+        public FPlane(object transport, string readOnly)
+        {
+            InitializeForm();
+            SetPlane((Plane)transport);
+            if (readOnly == "readonly")
             {
                 SetReadOnly();
             }

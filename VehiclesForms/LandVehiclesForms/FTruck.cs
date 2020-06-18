@@ -30,21 +30,25 @@ namespace OOTP.VehiclesForms.LandVehiclesForms
             {
                 ComboBox.Enabled = false;
             }
-            foreach (var RadioButton in Controls.OfType<RadioButton>())
+            foreach (var RadioButton in Controls.OfType<Panel>())
             {
                 RadioButton.Enabled = false;
             }
 
             ButSave.Hide();
         }
-        public FTruck(object transport, bool readMode)
+        public FTruck(object transport)
         {
             InitializeForm();
             SetTruck((Truck)transport);
-            if (readMode == true)
+        }
+        public FTruck(object transport, string readOnly)
+        {
+            InitializeForm();
+            SetTruck((Truck)transport);
+            if (readOnly == "readonly")
             {
                 SetReadOnly();
-                FEngine.ReadOnly = true;
             }
         }
         private void InitializeForm()

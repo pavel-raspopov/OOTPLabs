@@ -35,6 +35,10 @@
             this.RBOver_Yes = new System.Windows.Forms.RadioButton();
             this.RBOver_No = new System.Windows.Forms.RadioButton();
             this.ButSave = new System.Windows.Forms.Button();
+            this.panelHeavy = new System.Windows.Forms.Panel();
+            this.panelOver = new System.Windows.Forms.Panel();
+            this.panelHeavy.SuspendLayout();
+            this.panelOver.SuspendLayout();
             this.SuspendLayout();
             // 
             // FEngine
@@ -62,7 +66,7 @@
             // RBHeavy_Yes
             // 
             this.RBHeavy_Yes.AutoSize = true;
-            this.RBHeavy_Yes.Location = new System.Drawing.Point(503, 137);
+            this.RBHeavy_Yes.Location = new System.Drawing.Point(10, 10);
             this.RBHeavy_Yes.Name = "RBHeavy_Yes";
             this.RBHeavy_Yes.Size = new System.Drawing.Size(40, 17);
             this.RBHeavy_Yes.TabIndex = 12;
@@ -73,7 +77,7 @@
             // RBHeavy_No
             // 
             this.RBHeavy_No.AutoSize = true;
-            this.RBHeavy_No.Location = new System.Drawing.Point(559, 137);
+            this.RBHeavy_No.Location = new System.Drawing.Point(66, 10);
             this.RBHeavy_No.Name = "RBHeavy_No";
             this.RBHeavy_No.Size = new System.Drawing.Size(44, 17);
             this.RBHeavy_No.TabIndex = 13;
@@ -84,7 +88,7 @@
             // RBOver_Yes
             // 
             this.RBOver_Yes.AutoSize = true;
-            this.RBOver_Yes.Location = new System.Drawing.Point(528, 190);
+            this.RBOver_Yes.Location = new System.Drawing.Point(13, 9);
             this.RBOver_Yes.Name = "RBOver_Yes";
             this.RBOver_Yes.Size = new System.Drawing.Size(40, 17);
             this.RBOver_Yes.TabIndex = 14;
@@ -95,7 +99,7 @@
             // RBOver_No
             // 
             this.RBOver_No.AutoSize = true;
-            this.RBOver_No.Location = new System.Drawing.Point(584, 190);
+            this.RBOver_No.Location = new System.Drawing.Point(68, 9);
             this.RBOver_No.Name = "RBOver_No";
             this.RBOver_No.Size = new System.Drawing.Size(44, 17);
             this.RBOver_No.TabIndex = 15;
@@ -113,16 +117,32 @@
             this.ButSave.UseVisualStyleBackColor = true;
             this.ButSave.Click += new System.EventHandler(this.ButSave_Click);
             // 
+            // panelHeavy
+            // 
+            this.panelHeavy.Controls.Add(this.RBHeavy_Yes);
+            this.panelHeavy.Controls.Add(this.RBHeavy_No);
+            this.panelHeavy.Location = new System.Drawing.Point(493, 125);
+            this.panelHeavy.Name = "panelHeavy";
+            this.panelHeavy.Size = new System.Drawing.Size(123, 31);
+            this.panelHeavy.TabIndex = 17;
+            // 
+            // panelOver
+            // 
+            this.panelOver.Controls.Add(this.RBOver_Yes);
+            this.panelOver.Controls.Add(this.RBOver_No);
+            this.panelOver.Location = new System.Drawing.Point(512, 180);
+            this.panelOver.Name = "panelOver";
+            this.panelOver.Size = new System.Drawing.Size(115, 29);
+            this.panelOver.TabIndex = 18;
+            // 
             // FTruck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 276);
+            this.Controls.Add(this.panelOver);
+            this.Controls.Add(this.panelHeavy);
             this.Controls.Add(this.ButSave);
-            this.Controls.Add(this.RBOver_No);
-            this.Controls.Add(this.RBOver_Yes);
-            this.Controls.Add(this.RBHeavy_No);
-            this.Controls.Add(this.RBHeavy_Yes);
             this.Controls.Add(this.labOver);
             this.Controls.Add(this.labHeavy);
             this.Name = "FTruck";
@@ -130,11 +150,13 @@
             this.Load += new System.EventHandler(this.FTruck_Load);
             this.Controls.SetChildIndex(this.labHeavy, 0);
             this.Controls.SetChildIndex(this.labOver, 0);
-            this.Controls.SetChildIndex(this.RBHeavy_Yes, 0);
-            this.Controls.SetChildIndex(this.RBHeavy_No, 0);
-            this.Controls.SetChildIndex(this.RBOver_Yes, 0);
-            this.Controls.SetChildIndex(this.RBOver_No, 0);
             this.Controls.SetChildIndex(this.ButSave, 0);
+            this.Controls.SetChildIndex(this.panelHeavy, 0);
+            this.Controls.SetChildIndex(this.panelOver, 0);
+            this.panelHeavy.ResumeLayout(false);
+            this.panelHeavy.PerformLayout();
+            this.panelOver.ResumeLayout(false);
+            this.panelOver.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +171,7 @@
         private System.Windows.Forms.RadioButton RBOver_Yes;
         private System.Windows.Forms.RadioButton RBOver_No;
         private System.Windows.Forms.Button ButSave;
+        private System.Windows.Forms.Panel panelHeavy;
+        private System.Windows.Forms.Panel panelOver;
     }
 }

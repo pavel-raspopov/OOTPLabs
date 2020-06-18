@@ -37,11 +37,16 @@ namespace OOTP.VehiclesForms.WaterVehiclesForms
             InitializeComponent();
             ComboBJetskiType.SelectedIndex = 0;
         }
-        public FJetski(object transport, bool readMode)
+        public FJetski(object transport)
         {
             InitializeForm();
             SetJetski((Jetski)transport);
-            if (readMode == true)
+        }
+        public FJetski(object transport, string readOnly)
+        {
+            InitializeForm();
+            SetJetski((Jetski)transport);
+            if (readOnly == "readonly")
             {
                 SetReadOnly();
             }

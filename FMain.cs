@@ -9,6 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OOTP.Attributes;
+using OOTP.Vehicles;
+using OOTP.Vehicles.AirVehicles;
+using OOTP.Vehicles.LandVehicles;
+using OOTP.Vehicles.WaterVehicles;
+using OOTP.VehiclesForms.AirVehiclesForms;
+using OOTP.VehiclesForms.LandVehiclesForms;
+using OOTP.VehiclesForms.WaterVehiclesForms;
 using OOTP.Serializers;
 using System.Reflection;
 
@@ -19,11 +26,15 @@ namespace OOTP
         private string[] Plugins;
         private readonly List<Type> Sers = new List<Type>();
         private static readonly List<object> Vehicles = new List<object>();
+        private readonly Dictionary<int, Type> DictForms = new Dictionary<int, Type>();
+        private readonly Dictionary<Type, Type> DictVehicleTypes = new Dictionary<Type, Type>();
         public FMain()
         {
             InitializeComponent();
             InitSers();
             InitPlugins();
+            InitDictForms();
+            InitDictVehicleTypes();
             ComboBSers.SelectedIndex = 0;
             ComboBVehicleType.SelectedIndex = 0;
             lvVehicles.ContextMenuStrip = ContextMStrip;
@@ -42,9 +53,74 @@ namespace OOTP
             foreach (String file in Plugins)
                 ComboBArchiving.Items.Add(Path.GetFileNameWithoutExtension(file));
         }
+        private void InitDictForms()
+        {
+            DictForms.Add(0, typeof(FAirship));
+            DictForms.Add(1, typeof(FPlane));
+            DictForms.Add(2, typeof(FAuto));
+            DictForms.Add(3, typeof(FTruck));
+            DictForms.Add(4, typeof(FJetski));
+            DictForms.Add(5, typeof(FYacht));
+        }
+        private void InitDictVehicleTypes()
+        {
+            DictVehicleTypes.Add(typeof(Airship), typeof(FAirship));
+            DictVehicleTypes.Add(typeof(Plane), typeof(FPlane));
+            DictVehicleTypes.Add(typeof(Auto), typeof(FAuto));
+            DictVehicleTypes.Add(typeof(Truck), typeof(FTruck));
+            DictVehicleTypes.Add(typeof(Jetski), typeof(FJetski));
+            DictVehicleTypes.Add(typeof(Yacht), typeof(FYacht));
+        }
         public static void AddVehicle(object vehicle)
         {
             Vehicles.Add(vehicle);
+        }
+        private void RefreshVehicleList()
+        {
+            lvVehicles.Items.Clear();
+            foreach (Vehicle vehicle in Vehicles)
+            {
+                int value = (int)vehicle.TypeName;
+                lvVehicles.Items.Add(ComboBVehicleType.Items[value].ToString());
+                lvVehicles.Items[lvVehicles.Items.Count - 1].SubItems.Add(vehicle.Name);
+            }
+        }
+        private void CreateVehicleObject(int vehicleType)
+        {
+            Type type;
+            if (DictForms.TryGetValue(vehicleType, out type))
+            {
+                Form form = (Form)Activator.CreateInstance(type);
+                if (form != null)
+                    form.ShowDialog();
+            }
+            RefreshVehicleList();
+        }
+        private void ReadVehicleObject(Object vehicle)
+        {
+            Type type;
+            if (DictVehicleTypes.TryGetValue(vehicle.GetType(), out type))
+            {
+                Form form = (Form)Activator.CreateInstance(type, vehicle, "readonly");
+                if (form != null)
+                    form.ShowDialog();
+            }
+        }
+        private void UpdateVehicleObject(Object vehicle)
+        {
+            Type type;
+            if (DictVehicleTypes.TryGetValue(vehicle.GetType(), out type))
+            {
+                Form form = (Form)Activator.CreateInstance(type, vehicle);
+                if (form != null)
+                    form.ShowDialog();
+            }
+            RefreshVehicleList();
+        }
+        private void DeleteVehicleObject(int i)
+        {
+            Vehicles.RemoveAt(i);
+            RefreshVehicleList();
         }
         private ISer GetSer(string filepath)
         {
@@ -90,11 +166,16 @@ namespace OOTP
         {
 
         }
+        private void ButAdd_Click(object sender, EventArgs e)
+        {
+            CreateVehicleObject(ComboBVehicleType.SelectedIndex);
+        }
         private void ReadToolStripMI_Click(object sender, EventArgs e)
         {
             if (lvVehicles.SelectedItems.Count == 1)
             {
                 ListView.SelectedIndexCollection indexs = lvVehicles.SelectedIndices;
+                ReadVehicleObject(Vehicles[indexs[0]]);
             }
         }
         private void UpdateToolStripMI_Click(object sender, EventArgs e)
@@ -102,6 +183,7 @@ namespace OOTP
             if (lvVehicles.SelectedItems.Count == 1)
             {
                 ListView.SelectedIndexCollection indexs = lvVehicles.SelectedIndices;
+                UpdateVehicleObject(Vehicles[indexs[0]]);
             }
         }
         private void DeleteToolStripMI_Click(object sender, EventArgs e)
@@ -109,12 +191,9 @@ namespace OOTP
             if (lvVehicles.SelectedItems.Count == 1)
             {
                 ListView.SelectedIndexCollection indexs = lvVehicles.SelectedIndices;
+                DeleteVehicleObject(indexs[0]);
             }
         }
-        private void ButAdd_Click(object sender, EventArgs e)
-        {
-        }
-
         private void ButSave_Click(object sender, EventArgs e)
         {
             if (lvVehicles.SelectedItems.Count == 0)
@@ -178,9 +257,9 @@ namespace OOTP
                 }
 
                 loadVehicle = ser.Deserialize(filePath);
-                //foreach (Vehicle vehicle in loadVehicle)
-                //    Vehicles.Add(vehicle);
-                //UpdateVehicles();
+                foreach (Vehicle vehicle in loadVehicle)
+                    Vehicles.Add(vehicle);
+                RefreshVehicleList();
 
                 if (IsDecompressed)
                 {

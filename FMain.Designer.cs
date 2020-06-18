@@ -80,9 +80,9 @@
             "Дирижабль",
             "Самолет",
             "Автомобиль",
-            "Мотоцикл",
-            "Подлодка",
-            "Парусник"});
+            "Грузовик",
+            "Гидроцикл",
+            "Яхта"});
             this.ComboBVehicleType.Location = new System.Drawing.Point(468, 69);
             this.ComboBVehicleType.Name = "ComboBVehicleType";
             this.ComboBVehicleType.Size = new System.Drawing.Size(149, 21);

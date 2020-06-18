@@ -37,11 +37,16 @@ namespace OOTP.VehiclesForms.AirVehiclesForms
             InitializeComponent();
             ComboBShell.SelectedIndex = 0;
         }
-        public FAirship(object transport, bool readMode)
+        public FAirship(object transport)
         {
             InitializeForm();
             SetAirship((Airship)transport);
-            if (readMode == true)
+        }
+        public FAirship(object transport, string readOnly)
+        {
+            InitializeForm();
+            SetAirship((Airship)transport);
+            if (readOnly == "readonly")
             {
                 SetReadOnly();
             }

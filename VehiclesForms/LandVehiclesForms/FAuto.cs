@@ -33,15 +33,18 @@ namespace OOTP.VehiclesForms.LandVehiclesForms
 
             ButSave.Hide();
         }
-
-        public FAuto(object transport, bool readMode)
+        public FAuto(object transport)
         {
             InitializeForm();
             SetAuto((Auto)transport);
-            if (readMode == true)
+        }
+        public FAuto(object transport, string readOnly)
+        {
+            InitializeForm();
+            SetAuto((Auto)transport);
+            if (readOnly == "readonly")
             {
                 SetReadOnly();
-                FEngine.ReadOnly = true;
             }
         }
 

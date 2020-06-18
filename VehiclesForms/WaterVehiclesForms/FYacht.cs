@@ -38,11 +38,16 @@ namespace OOTP.VehiclesForms.WaterVehiclesForms
             ComboBYachtType.SelectedIndex = 0;
             ComboBDrive.SelectedIndex = 0;
         }
-        public FYacht(object transport, bool readMode)
+        public FYacht(object transport)
         {
             InitializeForm();
             SetYacht((Yacht)transport);
-            if (readMode == true)
+        }
+        public FYacht(object transport, string readOnly)
+        {
+            InitializeForm();
+            SetYacht((Yacht)transport);
+            if (readOnly == "readonly")
             {
                 SetReadOnly();
             }
@@ -70,31 +75,31 @@ namespace OOTP.VehiclesForms.WaterVehiclesForms
         {
             switch (type)
             {
-                case DriveUnit.none: ComboBYachtType.SelectedIndex = 0; break;
-                case DriveUnit.sail: ComboBYachtType.SelectedIndex = 1; break;
-                case DriveUnit.sailmotor: ComboBYachtType.SelectedIndex = 2; break;
-                case DriveUnit.motor: ComboBYachtType.SelectedIndex = 3; break;
+                case DriveUnit.none: ComboBDrive.SelectedIndex = 0; break;
+                case DriveUnit.sail: ComboBDrive.SelectedIndex = 1; break;
+                case DriveUnit.sailmotor: ComboBDrive.SelectedIndex = 2; break;
+                case DriveUnit.motor: ComboBDrive.SelectedIndex = 3; break;
             }
         }
         public DriveUnit GetDrive()
         {
-            switch (ComboBYachtType.SelectedIndex)
+            switch (ComboBDrive.SelectedIndex)
             {
                 case 0: return DriveUnit.none;
                 case 1: return DriveUnit.sail;
                 case 2: return DriveUnit.sailmotor;
                 case 3: return DriveUnit.motor;
             }
-            return DriveUnit.sailmotor;
+            return DriveUnit.sail;
         }
         private void EditYacht(Yacht yacht)
         {
             yacht.Name = GetName();
             yacht.Purpose = GetPorp();
-            yacht.Type = GetYachtType();
             yacht.Weight = GetWeight();
             yacht.Waterline = GetWLine();
             yacht.Сonsumption = GetCons();
+            yacht.Type = GetYachtType();
             yacht.Drive = GetDrive();
         }
         public void SetYacht(Yacht yacht)
@@ -102,10 +107,10 @@ namespace OOTP.VehiclesForms.WaterVehiclesForms
             receivedYacht = yacht;
             SetName(yacht.Name);
             SetPorp(yacht.Purpose);
-            SetYachtType(yacht.Type);
             SetWeight(yacht.Weight);
             SetWLine(yacht.Waterline);
             SetCons(yacht.Сonsumption);
+            SetYachtType(yacht.Type);
             SetDrive(yacht.Drive);
         }
 
